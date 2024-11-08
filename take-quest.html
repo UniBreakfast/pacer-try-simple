@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' style='background:black'><text y='16' font-family='Trebuchet MS' font-weight='900' fill='orange'>UB</text></svg>">
+
+  <!--<link rel="stylesheet" href="reset.css">-->
+  <!--<link rel="stylesheet" href="base.css">-->
+  <link rel="stylesheet" href="style.css">
+  <!--<script type="module" src="app.js"></script>-->
+  <script src="nav.js" defer></script>
+  <script src="ls-state.js" defer></script>
+  <script src="fs-state.js" defer></script>
+  <script src="take-quest.js" defer></script>
+
+  <title>Pacer Simple - Take Quest</title>
+</head>
+
+<body id="body">
+  <form id="form">
+    <h1>Pacer Simple - Take Quest</h1>
+
+    <div>
+      <label>
+        <span>Activity:</span>
+        <select type="text" name="activity"></select>
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>First day:</span>
+        <input type="date" name="start">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Duration in days:</span>
+        <input type="number" name="duration" min="1" max="999" step="1" value="2">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Quest Cost to pledge:</span>
+        <input type="number" name="pledge" min="1" max="9999" step="1">
+      </label>
+    </div>
+
+    <div>
+      <span>You have <output name="confidence"></output> points of confidence</span>
+    </div>
+
+    <div>
+      <button>Take Quest</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</body>
+
+</html>

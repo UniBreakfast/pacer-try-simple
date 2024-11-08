@@ -1,0 +1,30 @@
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body>* {
+  width: 90%;
+  max-width: 1000px;
+  margin: 5vh auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}

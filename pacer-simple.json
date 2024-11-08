@@ -1,0 +1,81 @@
+{
+  "confidence": 100,
+  "activities": [
+    {
+      "text": "Pull-ups",
+      "amount": "2 sequences",
+      "difficulty": 1
+    },
+    {
+      "text": "Energizing tapping",
+      "amount": "1 min",
+      "difficulty": 1
+    },
+    {
+      "text": "Hamstrings stretch",
+      "amount": "2 min",
+      "difficulty": 1
+    },
+    {
+      "text": "Nauli",
+      "amount": "3 times",
+      "difficulty": 2
+    },
+    {
+      "text": "Take melatonin",
+      "amount": "1 pill",
+      "difficulty": 2
+    },
+    {
+      "text": "Watch Radu",
+      "amount": "20 min",
+      "difficulty": 2
+    },
+    {
+      "text": "Roda",
+      "amount": "30 iterations",
+      "difficulty": 2
+    },
+    {
+      "text": "FreeCodeCamp",
+      "amount": "30 min",
+      "difficulty": 3
+    },
+    {
+      "text": "Swing exercises",
+      "amount": "150 swings",
+      "difficulty": 3
+    },
+    {
+      "text": "Drink water",
+      "amount": "1 liter",
+      "difficulty": 4
+    },
+    {
+      "text": "Deep relaxation",
+      "amount": "10 min",
+      "difficulty": 4
+    },
+    {
+      "text": "Push guard rails",
+      "amount": "6 sets",
+      "difficulty": 5
+    },
+    {
+      "text": "Work on older repos",
+      "amount": "30 min",
+      "difficulty": 7
+    },
+    {
+      "text": "Work on PacerGame development",
+      "amount": "30 min",
+      "difficulty": 8
+    },
+    {
+      "text": "Abstention",
+      "amount": "day",
+      "difficulty": 10
+    }
+  ],
+  "quests": []
+}
