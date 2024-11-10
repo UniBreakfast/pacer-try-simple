@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head id="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -9,40 +8,25 @@
   <!--<link rel="stylesheet" href="reset.css">-->
   <!--<link rel="stylesheet" href="base.css">-->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="discard-activities.css">
   <!--<script type="module" src="app.js"></script>-->
   <script src="nav.js" defer></script>
   <script src="ls-state.js" defer></script>
   <script src="fs-state.js" defer></script>
   <script src="confidence-hud.js" defer></script>
-  <script src="estimate-confidence.js" defer></script>
+  <script src="discard-activities.js" defer></script>
 
-  <title>Pacer Simple - Estimate Confidence</title>
+  <title>Pacer Simple - Discard Activities</title>
 </head>
 
 <body id="body">
   <form id="form">
-    <h1>Pacer Simple - Estimate Confidence</h1>
+    <h1>Pacer Simple - Discard Activities</h1>
+
+    <ul id="activities"></ul>
 
     <div>
-      <label>
-        <span>Current Level of Confidence:</span>
-        <select type="number" name="confidence">
-          <option value="1" disabled title="That's too low for games!">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </label>
-    </div>
-
-    <div>
-      <button>Apply</button>
+      <button>Discard Selected</button>
     </div>
   </form>
 </body>

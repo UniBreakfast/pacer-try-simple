@@ -17,7 +17,7 @@ function saveStateToFS() {
   const blob = new Blob([data], { type: 'text/json' })
   const link = document.createElement('a')
 
-  document.body.appendChild(link)
+  body.append(link)
   link.href = URL.createObjectURL(blob)
   link.download = fileName
   link.style.display = 'none'

@@ -11,5 +11,7 @@ function handleSubmit(e) {
 
   state.confidence = confidence
 
-  alert('Confidence is set to ' + confidence + '!')
+  // alert('Confidence is set to ' + confidence + '!')
+
+  window.dispatchEvent(new Event('load'))
 }

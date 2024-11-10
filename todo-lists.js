@@ -1,6 +1,8 @@
 const todoListsForm = document.getElementById('form')
 const todoList = document.getElementById('todo-list')
 
+todoListsForm.date.value = new Date().toISOString().slice(0, 10)
+
 todoListsForm.date.onchange = handleDateChange
 todoListsForm.onsubmit = handleSubmit
 
@@ -84,15 +86,16 @@ function makeTodoItem(todoDescriptor) {
   const ifDisabled = expected ? '' : 'disabled'
   const ifLast = day === duration && !inertia ?
     `, +${pledge}` : ''
-  const options = done ? `<option value="done">Done</option>` :
-    failed ? `<option value="failed">Failed</option>` : `
-      <option value=""></option>
-      <option value="done">Done</option>
-      <option value="failed">Failed</option>
+  const options = locked ? `<option value="locked">🔒</option>` :
+    done ? `<option value="done">✔️</option>` :
+    failed ? `<option value="failed">❌</option>` : `
+      <option value="">❔</option>
+      <option value="done">✔️</option>
+      <option value="failed">❌</option>
     `
   const dayCount = inertia ? `&lt;Inertia ${inertia}&gt;` :
     `(<span>${day}</span> of <span>${duration}</span>)`
-  const rewardInfo = done ? `<b>+${reward + ifLast}</b>` :
+  const rewardInfo = done ? `<b><u>+${reward + ifLast}</u></b>` :
     failed ? `<s>+${reward + ifLast}</s>` : `<i>+${reward + ifLast}?</i>`
 
   item.innerHTML = `
