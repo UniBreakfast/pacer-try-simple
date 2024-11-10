@@ -1,11 +1,14 @@
 const takeQuestForm = document.getElementById('form')
 
+takeQuestForm.start.value = new Date().toISOString().slice(0, 10)
+
 // fillActivitySelect()
 
 window.addEventListener('load', fillActivitySelect)
 window.addEventListener('load', showConfidence)
 
 takeQuestForm.onsubmit = handleSubmit
+takeQuestForm.calc.onclick = handleCalc
 
 function fillActivitySelect() {
   const activitySelect = takeQuestForm.activity
@@ -100,4 +103,16 @@ function calcReward(day, difficulty) {
   )
 
   return reward
+}
+
+function handleCalc() {
+  const duration = parseInt(takeQuestForm.duration.value)
+  const {difficulty} = JSON.parse(takeQuestForm.activity.value)
+  const questCost = calcQuestCost(duration, difficulty)
+  
+  takeQuestForm.pledge.value = questCost
+}
+
+function calcQuestCost(duration, difficulty) {
+  return duration * difficulty
 }
