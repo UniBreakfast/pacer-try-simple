@@ -1,18 +1,31 @@
 const todoListsForm = document.getElementById('form')
 const todoList = document.getElementById('todo-list')
+const dateInput = todoListsForm.date
 
-todoListsForm.date.value = new Date().toISOString().slice(0, 10)
+dateInput.value = new Date().toISOString().slice(0, 10)
 
-todoListsForm.date.onchange = handleDateChange
+dateInput.onchange = handleDateChange
+dateInput.nextElementSibling.onclick = handleDateShift
 todoListsForm.onsubmit = handleSubmit
 
 window.addEventListener('load', handleDateChange)
 
 function handleDateChange() {
-  const date = todoListsForm.date.value
+  const date = dateInput.value
   const list = makeTodoList(date)
 
   showTodoList(list)
+}
+
+function handleDateShift(e) {
+  if (!e.target.matches('button')) return
+  
+  const btn = e.target
+  const date = dateInput.value
+  const nextDate = makeShiftedDate(date, +btn.value)
+
+  dateInput.value = nextDate
+  dateInput.dispatchEvent(new Event('change'))
 }
 
 function handleSubmit(e) {
@@ -120,7 +133,7 @@ function updateTodo(quest, date, status) {
     if (todo.inertia) {
       const newTodo = {
         ...todo,
-        date: makeNextDate(date),
+        date: makeShiftedDate(date),
         done: false,
         inertia: todo.inertia + 1,
       }
@@ -129,7 +142,7 @@ function updateTodo(quest, date, status) {
     } else if (todo.day === quest.duration) {
       const newTodo = {
         ...todo,
-        date: makeNextDate(date),
+        date: makeShiftedDate(date),
         done: false,
         inertia: 1,
       }
@@ -152,10 +165,10 @@ function updateTodo(quest, date, status) {
   }
 }
 
-function makeNextDate(date0) {
+function makeShiftedDate(date0, shift=1) {
   const date = new Date(date0)
 
-  date.setDate(date.getDate() + 1)
-
+  date.setDate(date.getDate() + shift)
+  
   return date.toISOString().slice(0, 10)
 }

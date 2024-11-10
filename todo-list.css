@@ -1,3 +1,23 @@
+[name="date"]+span {
+  display: inline-block;
+  rotate: -90deg;
+  
+  button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      padding-right: 10px;
+    }
+  }
+}
+
 #todo-list {
   display: flex;
   flex-direction: column;
