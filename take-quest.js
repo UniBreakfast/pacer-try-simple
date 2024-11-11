@@ -1,6 +1,9 @@
 const takeQuestForm = document.getElementById('form')
 
-takeQuestForm.start.value = new Date().toISOString().slice(0, 10)
+takeQuestForm.start.setAttribute(
+  'value', 
+  takeQuestForm.start.value = new Date().toISOString().slice(0, 10)
+)
 
 // fillActivitySelect()
 
@@ -52,30 +55,38 @@ function handleSubmit(e) {
   state.confidence -= quest.pledge
 
   alert('Quest taken!')
+  takeQuestForm.reset()
 
   window.dispatchEvent(new Event('load'))
 }
 
 function makeQuest(activity, start, duration, pledge) {
+  const lastSimilarQuest = state.quests.find(
+    quest => quest.activity.text == activity.text && quest.activity.amount == activity.amount && quest.todos.at(-1).date == start && quest.todos.at(-1).inertia
+  )
+  const lastSimilarTodo = lastSimilarQuest?.todos.at(-1)
+  const sequence = lastSimilarTodo?.consecutive || 0
   const quest = {
     activity, start, duration, pledge,
-    todos: makeTodos(start, duration, activity.difficulty),
+    todos: makeTodos(start, duration, activity.difficulty, sequence),
     completed: false,
     failed: false,
     end: undefined,
   }
+  if (lastSimilarQuest) lastSimilarQuest.todos.length--
   
   return quest
 }
 
-function makeTodos(start, duration, difficulty) {
+function makeTodos(start, duration, difficulty, sequence = 0) {
   const todos = []
 
   for (let i = 0; i < duration; i++) {
     const todo = {
       day: i + 1,
+      consecutive: sequence + i + 1,
       date: makeShiftedDate(start, i),
-      reward: calcReward(i + 1, difficulty),
+      reward: calcReward(sequence + i + 1, difficulty),
       locked: Boolean(i),
       done: false,
       failed: false,

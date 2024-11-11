@@ -1,6 +1,7 @@
 [name="date"]+span {
   display: inline-block;
-  rotate: -90deg;
+  rotate: 45deg;
+  translate: -10px;
   
   button {
     padding: 0;
