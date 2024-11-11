@@ -7,5 +7,8 @@ function showConfidenceHUD() {
   confidenceOutput.id = 'confidence'
   confidenceOutput.innerText = state.confidence
 
+  confidenceOutput.className = state.confidence < 10 ? '' :
+    'two-digits'
+
   body.append(confidenceOutput)
 }
