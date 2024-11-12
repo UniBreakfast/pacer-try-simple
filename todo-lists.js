@@ -106,7 +106,7 @@ function makeTodoItem(todoDescriptor) {
       <option value="done">✔️</option>
       <option value="failed">❌</option>
     `
-  const dayCount = inertia ? `&lt;Inertia ${inertia}&gt;` :
+  const dayCount = inertia ? `(<span>${duration}</span> and <span>${inertia}</span>)` :
     `(<span>${day}</span> of <span>${duration}</span>)`
   const rewardInfo = done ? `<b><u>+${reward + ifLast}</u></b>` :
     failed ? `<s>+${reward + ifLast}</s>` : `<i>+${reward + ifLast}?</i>`
