@@ -1,0 +1,19 @@
+hint titles
+options screen
+autosave option
+auto calculate option
+locking out reestimation option
+locking out custom quest price option
+quests screen
+quest screen
+activity screen
+all todos screen
+one todo screen
+confidence screen
+dense state saving format schemas
+rewrite state proxification
+last changes on confidence hud hint title
+autoselect current date on take quest screen
+show activities options below line if not enough confidence
+show activities options below line if new quest would overlap
+show reason if impossible to take quest

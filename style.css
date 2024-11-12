@@ -9,7 +9,7 @@ html {
     inset: 0;
     pointer-events: none;
     box-shadow: inset 0 0 10px 2px currentColor;
-    animation: rainbow-glow 16s infinite linear;
+    animation: rainbow-glow 6s infinite linear;
     background-image: linear-gradient(-20deg, transparent 5%, currentColor 10%, transparent 15%);
     opacity: 0.5;
   }
