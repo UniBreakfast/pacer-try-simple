@@ -7,6 +7,12 @@ window.addEventListener('keydown', e => {
     e.preventDefault()
 
     loadStateFromFS()
+
+    proxifyState()
+
+    alert('State loaded from filesystem!')
+
+    window.dispatchEvent(new Event('load'))
   }
 })
 
