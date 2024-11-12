@@ -71,7 +71,7 @@ function makeQuest(activity, start, duration, pledge) {
     todos: makeTodos(start, duration, activity.difficulty, sequence),
     completed: false,
     failed: false,
-    end: undefined,
+    end: null,
   }
   if (lastSimilarQuest) lastSimilarQuest.todos.length--
   
