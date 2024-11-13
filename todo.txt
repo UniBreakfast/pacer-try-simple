@@ -14,6 +14,13 @@ dense state saving format schemas
 rewrite state proxification
 last changes on confidence hud hint title
 autoselect current date on take quest screen
-show activities options below line if not enough confidence
-show activities options below line if new quest would overlap
-show reason if impossible to take quest
+activities options below line if not enough confidence
+activities options below line if new quest would overlap
+reason if impossible to take quest
+disable submit report if no changes made
+arrow buttons to date inputs
+sorting, filtering, grouping
+table views
+endeavors
+endeavors to activities linking
+graphs
