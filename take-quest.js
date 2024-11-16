@@ -62,7 +62,8 @@ function handleSubmit(e) {
 
 function makeQuest(activity, start, duration, pledge) {
   const lastSimilarQuest = state.quests.find(
-    quest => quest.activity.text == activity.text && quest.activity.amount == activity.amount && quest.todos.at(-1).date == start && quest.todos.at(-1).inertia
+    q => q.activity.text == activity.text && q.activity.amount == activity.amount 
+      && q.todos.at(-1).date == start && q.todos.at(-1).inertia
   )
   const lastSimilarTodo = lastSimilarQuest?.todos.at(-1)
   const sequence = lastSimilarTodo?.consecutive || 0
@@ -73,7 +74,10 @@ function makeQuest(activity, start, duration, pledge) {
     failed: false,
     end: null,
   }
-  if (lastSimilarQuest) lastSimilarQuest.todos.length--
+  if (lastSimilarQuest) {
+    lastSimilarQuest.todos.length--
+    lastSimilarTodo.end = lastSimilarQuest.todos.at(-1).date
+  }
   
   return quest
 }
