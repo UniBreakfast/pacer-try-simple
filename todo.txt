@@ -24,3 +24,4 @@ table views
 endeavors
 endeavors to activities linking
 graphs
+don't add inertia if following quest is already taken
