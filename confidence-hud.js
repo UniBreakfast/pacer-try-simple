@@ -8,7 +8,7 @@ function showConfidenceHUD() {
   confidenceOutput.innerText = state.confidence
 
   confidenceOutput.className = state.confidence < 10 ? '' :
-    'two-digits'
+    state.confidence < 100 ? 'two-digits' : 'three-digits'
 
   body.append(confidenceOutput)
 }

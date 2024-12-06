@@ -14,5 +14,11 @@
 
   &.two-digits {
     width: 50px;
+    height: 42px;
+  }
+
+  &.three-digits {
+    width: 65px;
+    height: 45px;
   }
 }
