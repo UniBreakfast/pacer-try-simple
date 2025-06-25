@@ -8,27 +8,41 @@
 
   <!--<link rel="stylesheet" href="reset.css">-->
   <!--<link rel="stylesheet" href="base.css">-->
-  <link rel="stylesheet" href="confidence-hud.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../confidence-hud.css">
+  <link rel="stylesheet" href="../style.css">
   <!--<script type="module" src="app.js"></script>-->
-  <script src="nav.js" defer></script>
-  <script src="ls-state.js" defer></script>
-  <script src="fs-state.js" defer></script>
-  <script src="confidence-hud.js" defer></script>
-  <script src="estimate-confidence.js" defer></script>
+  <script src="../nav.js" defer></script>
+  <script src="../ls-state.js" defer></script>
+  <script src="../fs-state.js" defer></script>
+  <script src="../confidence-hud.js" defer></script>
+  <script src="add-activity.js" defer></script>
 
-  <title>Pacer Simple - Estimate Confidence</title>
+  <title>Pacer Simple - Add Activity</title>
 </head>
 
 <body id="body">
   <form id="form">
-    <h1>Pacer Simple - Estimate Confidence</h1>
+    <h1>Pacer Simple - Add Activity</h1>
+    
+    <div>
+      <label>
+        <span>Activity text:</span>
+        <input type="text" name="text">
+      </label>
+    </div>
 
     <div>
       <label>
-        <span>Current Level of Confidence:</span>
-        <select type="number" name="confidence">
-          <option value="1" disabled title="That's too low for games!">1</option>
+        <span>Amount in units:</span>
+        <input type="text" name="amount">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Difficulty:</span>
+        <select type="number" name="difficulty">
+          <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -43,7 +57,8 @@
     </div>
 
     <div>
-      <button>Apply</button>
+      <button>Add</button>
+      <button type="reset">Reset</button>
     </div>
   </form>
 </body>

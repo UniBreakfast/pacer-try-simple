@@ -9,7 +9,7 @@ window.addEventListener('keydown', e => {
 })
 
 function openPageIndex() {
-  location.href = 'index.html'
+  location.href = '../index.html'
 }
 
 function showGoToIndex() {

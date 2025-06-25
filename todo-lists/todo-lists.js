@@ -3,11 +3,9 @@ const todoList = document.getElementById('todo-list')
 const dateInput = todoListsForm.date
 
 dateInput.value = new Date().toISOString().slice(0, 10)
-
 dateInput.onchange = handleDateChange
 dateInput.nextElementSibling.onclick = handleDateShift
 todoListsForm.onsubmit = handleSubmit
-
 window.addEventListener('load', handleDateChange)
 
 function handleDateChange() {
@@ -16,7 +14,6 @@ function handleDateChange() {
 
   showTodoList(list)
 }
-
 function handleDateShift(e) {
   if (!e.target.matches('button')) return
   
@@ -27,7 +24,6 @@ function handleDateShift(e) {
   dateInput.value = nextDate
   dateInput.dispatchEvent(new Event('change'))
 }
-
 function handleSubmit(e) {
   e.preventDefault()
 
@@ -54,14 +50,11 @@ function showTodoList(list) {
 
   todoList.replaceChildren(...todoItems)
 }
-
 function makeTodoList(date) {
   const list = []
-
   for (const quest of state.quests) {
     if (quest.start > date) continue
     if (quest.todos.at(-1).date < date) continue
-
     for (const todo of quest.todos) {
       if (todo.date > date) break
       if (todo.date === date) {
@@ -78,16 +71,13 @@ function makeTodoList(date) {
           inertia: todo.inertia,
           pledge: quest.pledge,
         }
-
         list.push(todoDescriptor)
         break
       }
     }
   }
-
   return list
 }
-
 function makeTodoItem(todoDescriptor) {
   const item = document.createElement('li')
   const {
@@ -110,7 +100,6 @@ function makeTodoItem(todoDescriptor) {
     `(<span>${day}</span> of <span>${duration}</span>)`
   const rewardInfo = done ? `<b><u>+${reward + ifLast}</u></b>` :
     failed ? `<s>+${reward + ifLast}</s>` : `<i>+${reward + ifLast}?</i>`
-
   item.innerHTML = `
     <select name='${nameValue}' ${ifDisabled}>${options}</select>
     &nbsp; <span>${text}</span>,
@@ -118,7 +107,6 @@ function makeTodoItem(todoDescriptor) {
     <span>${dayCount}</span> &nbsp;
     <span>${rewardInfo}</span>
   `
-
   return item
 }
 
